@@ -1,5 +1,5 @@
 {
-  "version": "1.11.0",
+  "version": "1.11.1",
   "devices": [
     {
       "id": "CYD2USB_INVERT_OFF",
@@ -8,7 +8,7 @@
       "files": {
         "bootloader": "resources/STATIC/M/CYD/esp32_marauder.ino.bootloader.bin",
         "partitions": "resources/STATIC/M/CYD/esp32_marauder.ino.partitions.bin",
-        "firmware": "resources/CURRENT/esp32_marauder_v1_11_0_20260310_cyd_2432S028.bin"
+        "firmware": "resources/CURRENT/esp32_marauder_v1_11_1_20260402_cyd_2432S028.bin"
       }
     },
     {
@@ -18,7 +18,7 @@
       "files": {
         "bootloader": "resources/STATIC/M/CYD/esp32_marauder.ino.bootloader.bin",
         "partitions": "resources/STATIC/M/CYD/esp32_marauder.ino.partitions.bin",
-        "firmware": "resources/CURRENT/esp32_marauder_v1_11_0_20260310_cyd_2432S028_inverted.bin"
+        "firmware": "resources/CURRENT/esp32_marauder_v1_11_1_20260402_cyd_2432S028_inverted.bin"
       }
     },
     {
@@ -28,7 +28,7 @@
       "files": {
         "bootloader": "resources/STATIC/M/CYD/esp32_marauder.ino.bootloader.bin",
         "partitions": "resources/STATIC/M/CYD/esp32_marauder.ino.partitions.bin",
-        "firmware": "resources/CURRENT/esp32_marauder_v1_11_0_20260310_cyd_2432S028_2usb.bin"
+        "firmware": "resources/CURRENT/esp32_marauder_v1_11_1_20260402_cyd_2432S028_2usb.bin"
       }
     }
   ]
