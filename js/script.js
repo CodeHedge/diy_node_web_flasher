@@ -1,4 +1,4 @@
-import { loadManifest, getDeviceFiles, getManifestVersion, getAllDevices, setProduct, getProduct, getDeviceOffsets, getDeviceVersion } from './variables.js';
+import { loadManifest, getDeviceFiles, getManifestVersion, getAllDevices, setProduct, getProduct, getDeviceOffsets, getDeviceVersion, loadOldVersions, getOldVersionsList, getOldVersionDeviceFiles } from './variables.js';
 
 let espStub;
 let isConnected = false;
@@ -152,7 +152,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
+    versionSelect.addEventListener("change", () => {
+        const selectedVersion = versionSelect.value;
+        const product = getProduct();
+        if (product === 'marauder') {
+            const versionElement = document.getElementById('versionDisplay');
+            if (versionElement) {
+                if (selectedVersion === 'latest') {
+                    const version = getManifestVersion();
+                    versionElement.innerHTML = `<b>v${version}</b>`;
+                } else if (selectedVersion.startsWith('old:')) {
+                    versionElement.innerHTML = `<b>v${selectedVersion.substring(4)}</b>`;
+                }
+            }
+        }
+    });
+
     modelSelect.addEventListener("change", checkDropdowns);
+    versionSelect.addEventListener("change", checkDropdowns);
 
     function checkDropdowns() {
         const isAnyDropdownNull = [modelSelect.value, versionSelect.value].includes("NULL");
@@ -507,6 +524,13 @@ async function clickProgram() {
             errorMsg(`No files found for model: ${selectedModel}`);
             return;
         }
+    } else if (selectedVersion.startsWith("old:")) {
+        const oldVersion = selectedVersion.substring(4);
+        selectedFiles = getOldVersionDeviceFiles(oldVersion, selectedModel);
+        if (!selectedFiles) {
+            errorMsg(`No files found for model ${selectedModel} in version ${oldVersion}`);
+            return;
+        }
     } else {
         errorMsg(`Unsupported version: ${selectedVersion}`);
         return;
@@ -701,6 +725,9 @@ async function initializeFromManifest() {
     try {
         await loadManifest();
 
+        // Load old versions in parallel (Marauder only, non-blocking)
+        await loadOldVersions();
+
         // Update version display
         updateVersionDisplay();
 
@@ -796,12 +823,30 @@ function updateVersionDropdown() {
     } else if (version) {
         const option = document.createElement('option');
         option.value = 'latest';
-        option.textContent = `Current ${version}`;
+        option.textContent = `v${version} (Current)`;
         versionSelect.appendChild(option);
     } else {
         const option = document.createElement('option');
         option.value = 'latest';
         option.textContent = 'Current (latest)';
         versionSelect.appendChild(option);
+    }
+
+    // Add old versions for Marauder
+    if (product === 'marauder') {
+        const oldVersions = getOldVersionsList();
+        if (oldVersions.length > 0) {
+            const separator = document.createElement('option');
+            separator.disabled = true;
+            separator.textContent = '── Previous Versions ──';
+            versionSelect.appendChild(separator);
+
+            oldVersions.forEach(v => {
+                const option = document.createElement('option');
+                option.value = 'old:' + v.version;
+                option.textContent = `v${v.version}`;
+                versionSelect.appendChild(option);
+            });
+        }
     }
 }

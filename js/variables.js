@@ -4,6 +4,10 @@ let manifestLoadPromise = null;
 let currentProduct = null;
 let manifestPath = null;
 
+// Old versions data (Marauder only)
+let oldVersionsData = null;
+let oldVersionsLoadPromise = null;
+
 /**
  * Set the active product and configure manifest path
  * @param {string} product - 'biscuit' or 'marauder'
@@ -13,6 +17,8 @@ export function setProduct(product) {
     // Reset cached manifest when switching products
     manifestData = null;
     manifestLoadPromise = null;
+    oldVersionsData = null;
+    oldVersionsLoadPromise = null;
 
     if (product === 'biscuit') {
         manifestPath = 'resources/BISCUIT/CURRENT/manifest.json';
@@ -133,4 +139,72 @@ export function getDeviceVersion(deviceId) {
         return null;
     }
     return device.version;
+}
+
+/**
+ * Load old firmware versions (Marauder only)
+ * @returns {Object|null} Old versions data or null if not applicable
+ */
+export async function loadOldVersions() {
+    if (currentProduct !== 'marauder') {
+        return null;
+    }
+
+    if (oldVersionsData) {
+        return oldVersionsData;
+    }
+
+    if (oldVersionsLoadPromise) {
+        return oldVersionsLoadPromise;
+    }
+
+    const url = 'resources/marauder_versions.json?t=' + Date.now();
+
+    oldVersionsLoadPromise = (async () => {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`Failed to load old versions: ${response.status} ${response.statusText}`);
+            }
+            oldVersionsData = await response.json();
+            return oldVersionsData;
+        } catch (error) {
+            console.error('Error loading old versions:', error);
+            return null;
+        }
+    })();
+
+    return oldVersionsLoadPromise;
+}
+
+/**
+ * Get list of old versions available
+ * @returns {Array} Array of {version, date} objects
+ */
+export function getOldVersionsList() {
+    if (!oldVersionsData || !oldVersionsData.versions) {
+        return [];
+    }
+    return oldVersionsData.versions.map(v => ({ version: v.version, date: v.date }));
+}
+
+/**
+ * Get device files for a specific old version
+ * @param {string} version - Version string (e.g. "1.10.2")
+ * @param {string} deviceId - Device ID
+ * @returns {Object|null} File paths or null if not found
+ */
+export function getOldVersionDeviceFiles(version, deviceId) {
+    if (!oldVersionsData || !oldVersionsData.versions) {
+        return null;
+    }
+    const versionEntry = oldVersionsData.versions.find(v => v.version === version);
+    if (!versionEntry) {
+        return null;
+    }
+    const device = versionEntry.devices.find(d => d.id === deviceId);
+    if (!device) {
+        return null;
+    }
+    return device.files;
 }

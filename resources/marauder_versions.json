@@ -1,0 +1,154 @@
+{
+  "versions": [
+    {
+      "version": "1.10.2",
+      "date": "2026-02-01",
+      "devices": [
+        {
+          "id": "CYD2USB_INVERT_OFF",
+          "files": {
+            "bootloader": "resources/STATIC/M/CYD/esp32_marauder.ino.bootloader.bin",
+            "partitions": "resources/STATIC/M/CYD/esp32_marauder.ino.partitions.bin",
+            "firmware": "resources/PREVIOUS/esp32_marauder_v1_10_2_20260201_cyd_2432S028.bin"
+          }
+        },
+        {
+          "id": "CYD2USB_INVERT_ON",
+          "files": {
+            "bootloader": "resources/STATIC/M/CYD/esp32_marauder.ino.bootloader.bin",
+            "partitions": "resources/STATIC/M/CYD/esp32_marauder.ino.partitions.bin",
+            "firmware": "resources/PREVIOUS/esp32_marauder_v1_10_2_20260201_cyd_2432S028_inverted.bin"
+          }
+        },
+        {
+          "id": "CYD2USB_V21_INVERT_OFF",
+          "files": {
+            "bootloader": "resources/STATIC/M/CYD/esp32_marauder.ino.bootloader.bin",
+            "partitions": "resources/STATIC/M/CYD/esp32_marauder.ino.partitions.bin",
+            "firmware": "resources/PREVIOUS/esp32_marauder_v1_10_2_20260201_cyd_2432S028_2usb.bin"
+          }
+        }
+      ]
+    },
+    {
+      "version": "1.10.1",
+      "date": "2026-01-28",
+      "devices": [
+        {
+          "id": "CYD2USB_INVERT_OFF",
+          "files": {
+            "bootloader": "resources/STATIC/M/CYD/esp32_marauder.ino.bootloader.bin",
+            "partitions": "resources/STATIC/M/CYD/esp32_marauder.ino.partitions.bin",
+            "firmware": "resources/PREVIOUS/esp32_marauder_v1_10_1_20260128_cyd_2432S028.bin"
+          }
+        },
+        {
+          "id": "CYD2USB_INVERT_ON",
+          "files": {
+            "bootloader": "resources/STATIC/M/CYD/esp32_marauder.ino.bootloader.bin",
+            "partitions": "resources/STATIC/M/CYD/esp32_marauder.ino.partitions.bin",
+            "firmware": "resources/PREVIOUS/esp32_marauder_v1_10_1_20260128_cyd_2432S028_inverted.bin"
+          }
+        },
+        {
+          "id": "CYD2USB_V21_INVERT_OFF",
+          "files": {
+            "bootloader": "resources/STATIC/M/CYD/esp32_marauder.ino.bootloader.bin",
+            "partitions": "resources/STATIC/M/CYD/esp32_marauder.ino.partitions.bin",
+            "firmware": "resources/PREVIOUS/esp32_marauder_v1_10_1_20260128_cyd_2432S028_2usb.bin"
+          }
+        }
+      ]
+    },
+    {
+      "version": "1.10.0",
+      "date": "2026-01-21",
+      "devices": [
+        {
+          "id": "CYD2USB_INVERT_OFF",
+          "files": {
+            "bootloader": "resources/STATIC/M/CYD/esp32_marauder.ino.bootloader.bin",
+            "partitions": "resources/STATIC/M/CYD/esp32_marauder.ino.partitions.bin",
+            "firmware": "resources/PREVIOUS/esp32_marauder_v1_10_0_20260121_cyd_2432S028.bin"
+          }
+        },
+        {
+          "id": "CYD2USB_INVERT_ON",
+          "files": {
+            "bootloader": "resources/STATIC/M/CYD/esp32_marauder.ino.bootloader.bin",
+            "partitions": "resources/STATIC/M/CYD/esp32_marauder.ino.partitions.bin",
+            "firmware": "resources/PREVIOUS/esp32_marauder_v1_10_0_20260121_cyd_2432S028_inverted.bin"
+          }
+        },
+        {
+          "id": "CYD2USB_V21_INVERT_OFF",
+          "files": {
+            "bootloader": "resources/STATIC/M/CYD/esp32_marauder.ino.bootloader.bin",
+            "partitions": "resources/STATIC/M/CYD/esp32_marauder.ino.partitions.bin",
+            "firmware": "resources/PREVIOUS/esp32_marauder_v1_10_0_20260121_cyd_2432S028_2usb.bin"
+          }
+        }
+      ]
+    },
+    {
+      "version": "1.9.1",
+      "date": "2026-01-03",
+      "devices": [
+        {
+          "id": "CYD2USB_INVERT_OFF",
+          "files": {
+            "bootloader": "resources/STATIC/M/CYD/esp32_marauder.ino.bootloader.bin",
+            "partitions": "resources/STATIC/M/CYD/esp32_marauder.ino.partitions.bin",
+            "firmware": "resources/PREVIOUS/esp32_marauder_v1_9_1_20260103_cyd_2432S028.bin"
+          }
+        },
+        {
+          "id": "CYD2USB_INVERT_ON",
+          "files": {
+            "bootloader": "resources/STATIC/M/CYD/esp32_marauder.ino.bootloader.bin",
+            "partitions": "resources/STATIC/M/CYD/esp32_marauder.ino.partitions.bin",
+            "firmware": "resources/PREVIOUS/esp32_marauder_v1_9_1_20260103_cyd_2432S028_inverted.bin"
+          }
+        },
+        {
+          "id": "CYD2USB_V21_INVERT_OFF",
+          "files": {
+            "bootloader": "resources/STATIC/M/CYD/esp32_marauder.ino.bootloader.bin",
+            "partitions": "resources/STATIC/M/CYD/esp32_marauder.ino.partitions.bin",
+            "firmware": "resources/PREVIOUS/esp32_marauder_v1_9_1_20260103_cyd_2432S028_2usb.bin"
+          }
+        }
+      ]
+    },
+    {
+      "version": "1.9.0",
+      "date": "2025-12-13",
+      "devices": [
+        {
+          "id": "CYD2USB_INVERT_OFF",
+          "files": {
+            "bootloader": "resources/STATIC/M/CYD/esp32_marauder.ino.bootloader.bin",
+            "partitions": "resources/STATIC/M/CYD/esp32_marauder.ino.partitions.bin",
+            "firmware": "resources/PREVIOUS/esp32_marauder_v1_9_0_20251213_cyd_2432S028.bin"
+          }
+        },
+        {
+          "id": "CYD2USB_INVERT_ON",
+          "files": {
+            "bootloader": "resources/STATIC/M/CYD/esp32_marauder.ino.bootloader.bin",
+            "partitions": "resources/STATIC/M/CYD/esp32_marauder.ino.partitions.bin",
+            "firmware": "resources/PREVIOUS/esp32_marauder_v1_9_0_20251213_cyd_2432S028_inverted.bin"
+          }
+        },
+        {
+          "id": "CYD2USB_V21_INVERT_OFF",
+          "files": {
+            "bootloader": "resources/STATIC/M/CYD/esp32_marauder.ino.bootloader.bin",
+            "partitions": "resources/STATIC/M/CYD/esp32_marauder.ino.partitions.bin",
+            "firmware": "resources/PREVIOUS/esp32_marauder_v1_9_0_20251213_cyd_2432S028_2usb.bin"
+          }
+        }
+      ]
+    }
+  ]
+}
