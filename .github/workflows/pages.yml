@@ -29,14 +29,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: install node v16
+      - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
-      - name: Install Yarn with NPM
-        run: npm install -g yarn
-      - name: yarn install
-        run: yarn install
+          node-version: 20
+      - name: Install dependencies
+        run: npm install
       - name: Compile TypeScript
         run: |
           set -e
