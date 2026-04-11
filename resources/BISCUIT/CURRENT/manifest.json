@@ -2,8 +2,8 @@
   "product": "biscuit",
   "devices": [
     {
-      "id": "BISCUIT_DIY_C5",
-      "name": "Biscuit DIY (ESP32-C5)",
+      "id": "BISCUIT_DIY_C5DEV",
+      "name": "Biscuit DIY C5 Dev (ESP32-C5)",
       "group": "Biscuit DIY",
       "chip": "ESP32-C5",
       "version": "1.3.50",
@@ -13,9 +13,60 @@
         65536
       ],
       "files": {
-        "bootloader": "resources/BISCUIT/CURRENT/biscuit_diy_c5_bootloader.bin",
-        "partitions": "resources/BISCUIT/CURRENT/biscuit_diy_c5_partitions.bin",
-        "firmware": "resources/BISCUIT/CURRENT/biscuit_diy_c5.bin"
+        "bootloader": "resources/BISCUIT/CURRENT/biscuit_diy-c5dev_c5_bootloader.bin",
+        "partitions": "resources/BISCUIT/CURRENT/biscuit_diy-c5dev_c5_partitions.bin",
+        "firmware": "resources/BISCUIT/CURRENT/biscuit_diy-c5dev_c5.bin"
+      }
+    },
+    {
+      "id": "BISCUIT_DIY_XIAO",
+      "name": "Biscuit DIY XIAO (ESP32-C5)",
+      "group": "Biscuit DIY",
+      "chip": "ESP32-C5",
+      "version": "1.3.50",
+      "offsets": [
+        8192,
+        32768,
+        65536
+      ],
+      "files": {
+        "bootloader": "resources/BISCUIT/CURRENT/biscuit_diy-xiao_c5_bootloader.bin",
+        "partitions": "resources/BISCUIT/CURRENT/biscuit_diy-xiao_c5_partitions.bin",
+        "firmware": "resources/BISCUIT/CURRENT/biscuit_diy-xiao_c5.bin"
+      }
+    },
+    {
+      "id": "BISCUIT_DIY_TDONGLE",
+      "name": "Biscuit DIY T-Dongle (ESP32-C5)",
+      "group": "Biscuit DIY",
+      "chip": "ESP32-C5",
+      "version": "1.3.50",
+      "offsets": [
+        8192,
+        32768,
+        65536
+      ],
+      "files": {
+        "bootloader": "resources/BISCUIT/CURRENT/biscuit_diy-tdongle_c5_bootloader.bin",
+        "partitions": "resources/BISCUIT/CURRENT/biscuit_diy-tdongle_c5_partitions.bin",
+        "firmware": "resources/BISCUIT/CURRENT/biscuit_diy-tdongle_c5.bin"
+      }
+    },
+    {
+      "id": "BISCUIT_DIY_WAVESHARE",
+      "name": "Biscuit DIY Waveshare (ESP32-C5)",
+      "group": "Biscuit DIY",
+      "chip": "ESP32-C5",
+      "version": "1.3.50",
+      "offsets": [
+        8192,
+        32768,
+        65536
+      ],
+      "files": {
+        "bootloader": "resources/BISCUIT/CURRENT/biscuit_diy-waveshare_c5_bootloader.bin",
+        "partitions": "resources/BISCUIT/CURRENT/biscuit_diy-waveshare_c5_partitions.bin",
+        "firmware": "resources/BISCUIT/CURRENT/biscuit_diy-waveshare_c5.bin"
       }
     },
     {
